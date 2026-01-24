@@ -17,7 +17,7 @@ export default function PlaycreatePage() {
   return (
     <div className="flex min-h-screen justify-center font-sans bg-white">
       <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8 text-black">
-        <CaseStudyHeader />
+        <CaseStudyHeader links={{ external: "https://tryplaycreate.com"}} />
         <CaseStudyContent
           title="PlayCreate — Won Us a Trip to SF"
           image="/projects/playcreate.png"

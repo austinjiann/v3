@@ -16,7 +16,7 @@ export default function FlowboardPage() {
   return (
     <div className="flex min-h-screen justify-center font-sans bg-white">
       <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8 text-black">
-        <CaseStudyHeader />
+        <CaseStudyHeader links={{ external: "https://flowboard.tech", github: "https://github.com/austinjiann/FlowBoard" }} />
         <CaseStudyContent
           title="FlowBoard — Viral Open Source Project"
           image="/projects/flowboard.png"

@@ -15,7 +15,7 @@ export default function PlanthopperPage() {
   return (
     <div className="flex min-h-screen justify-center font-sans bg-white">
       <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8 text-black">
-        <CaseStudyHeader />
+        <CaseStudyHeader links={{ github: "https://github.com/eu-lee/PlantHopper" }} />
         <CaseStudyContent
           title="Plant Hopper — 1st at Hack the Valley"
           image="/projects/planthopper.png"
