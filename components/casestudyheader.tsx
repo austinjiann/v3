@@ -2,10 +2,16 @@
 
 import Link from 'next/link';
 import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
+import * as motion from 'motion/react-client';
 
 export function CaseStudyHeader() {
   return (
-    <div className="flex items-center justify-between w-full mb-6">
+    <motion.div 
+      className="flex items-center justify-between w-full mb-6"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Link href="/" className="text-1xl font-semibold text-black hover:opacity-70 transition-opacity">
         austin jian
       </Link>
@@ -20,6 +26,6 @@ export function CaseStudyHeader() {
           <GitHubLogoIcon width={20} height={20} />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,5 +1,7 @@
 'use client';
 
+import * as motion from 'motion/react-client';
+
 interface ExperienceCardProps {
     logo: string;
     company: string;
@@ -8,6 +10,7 @@ interface ExperienceCardProps {
     gradientOverlay?: string;
     gradientOnTop?: boolean;
     href?: string;
+    index?: number;
 }
 
 export const ExperienceCard = ({
@@ -17,14 +20,18 @@ export const ExperienceCard = ({
     backgroundImage,
     gradientOverlay,
     gradientOnTop = false,
-    href
+    href,
+    index = 0
 }: ExperienceCardProps) => {
     return (
-        <a
+        <motion.a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-gray-200 bg-white transition-colors duration-500"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
         >
             <div className="relative z-10 flex items-center gap-4 p-4">
                 <img src={logo} alt={company} className="h-14 w-14 rounded-xl"/>
@@ -59,6 +66,6 @@ export const ExperienceCard = ({
                     />
                 )}
             </div>
-        </a>
+        </motion.a>
     )
 }
