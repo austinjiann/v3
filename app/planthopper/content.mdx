@@ -1,0 +1,87 @@
+import { HoverLink } from '@/components/hoverlink';
+
+## Overview
+
+Plants are good. They give us oxygen and they look cool. But.... they need to be maintained. 
+
+What if we had a robot that had a mounted turret with a water bottle attached so that it
+could automatically track and aim water at plants? Wouldn't it be so cool if it also could water
+based on moisture levels, and if you wanted to you could access a dashboard on your phone to control this turret?
+
+Well... that's exactly what PlantHopper is. It hops around your plants and shoots water at them.
+
+<img 
+  src="/caseStudyMedia/planthopperTable.png" 
+  alt="PlantHopper Turret" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## How it works
+
+To be honest, I'm not much of a robotics guy but my teammates sure were. They are crazy cracked at robotics, but I don't know much.
+I learned what an april tag was at this hackathon lol.   
+
+Anyways I basically connected the software to firebase so that you can control
+the turret using any computer as long as you have the dashboard open. From what I understand: 
+
+PlantHopper is split into three layers: the turret hardware/firmware, a cloud-backed web dashboard, and a Python control layer that connects everything end-to-end.
+
+### Hardware + Firmware
+
+- Custom CAD turret with 2 DOF (pitch + base rotation)
+- AprilTag detection to locate each plant and calculate distance + offset
+- PID alignment + trigonometry to compute the optimal shooting angle
+- Servo-controlled, tunable water gun for precision watering
+
+### Cloud + Web App
+
+- Firebase backend + Next.js dashboard deployed on Vercel
+- Robot publishes soil moisture data + CV images to the database
+- Web app sends commands (water now, scan plants, fetch moisture/health)
+- Commands execute in real time via a Python threaded controller
+- Control/monitor from any device (no local setup)
+
+### Python Control Layer
+
+A multithreaded Python script ties everything together:
+
+- Runs computer vision
+- Manages serial communication with the Arduino
+- Handles Firebase reads/writes
+- Oversees timing, alignment, and command execution
+
+<img 
+  src="/caseStudyMedia/cadModel.png" 
+  alt="PlantHopper Model" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## Results
+
+We won first place at <HoverLink href="https://hackthevalley.io/">Hack the Valley</HoverLink> 2025! Thank you to my teammates
+<HoverLink href="https://www.linkedin.com/in/eugene-lee-597a0235a">Eugene</HoverLink>, <HoverLink href="https://www.linkedin.com/in/jason-liu-646b30273">Jason</HoverLink>, and <HoverLink href="https://www.linkedin.com/in/seanchansato">Sean</HoverLink>! I learned a lot working from you guys, especially about hardware, as I've never worked with hardware before.
+You guys are also super chill and easy to work with :)
+
+<img 
+  src="/caseStudyMedia/htv win.jpeg" 
+  alt="PlantHopper Model" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>

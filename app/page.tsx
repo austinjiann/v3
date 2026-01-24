@@ -2,12 +2,26 @@ import { HoverLink } from '@/components/hoverlink';
 import { Box, Theme } from "@radix-ui/themes";
 import { ExperienceCard } from '@/components/experiencecard';
 import { ProjectCard } from '@/components/projectcard';
-import React from 'react';
+import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
+import { Footer } from '@/components/footer';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-center font-sans bg-white">
         <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
-          <h2 className="text-1xl font-semibold text-black">austin jian</h2>
+          <div className="flex items-center justify-between w-full">
+            <h2 className="text-1xl font-semibold text-black">austin jian</h2>
+            <div className="flex items-center gap-3">
+              <a href="https://linkedin.com/in/austin-jian" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black transition-colors">
+                <LinkedInLogoIcon width={20} height={20} />
+              </a>
+              <a href="https://twitter.com/austinjian_" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black transition-colors">
+                <TwitterLogoIcon width={20} height={20} />
+              </a>
+              <a href="https://github.com/austinjiann" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black transition-colors">
+                <GitHubLogoIcon width={20} height={20} />
+              </a>
+            </div>
+          </div>
           <p className="text-lg text-black pt-2">studying cs <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> @uwaterloo</HoverLink> & building beautiful software</p>
           <h2 className="text-1xl font-semibold text-black pt-2">what i've been up to</h2>
           <ExperienceCard 
@@ -30,30 +44,39 @@ export default function Home() {
           <h2 className="text-1xl font-semibold text-black pb-2">cool projects</h2>
           <div className="grid grid-cols-2 gap-6 w-full">
             <ProjectCard
-              image="/projects/placeholder.png"
+              image="/projects/pindex.png"
               title="pindex"
               year="2026"
-              description={<>agentic index funds for polymarket. winner @ <HoverLink href="https://www.nexhacks.com/">nexhacks</HoverLink></>}
+              description="agentic index funds for polymarket. winner @ nexhacks"
+              glowColor="rgba(30, 58, 138, 0.5)"
+              href="https://github.com/dtpu/Pindex"
             />
             <ProjectCard
               image="/projects/flowboard.png"
               title="flowboard"
               year="2025"
-              description="rough sketches to animations, frame by frame. 100+ github stars & 100k+ views"
+              description="rough sketches to animations, frame by frame. 100+ stars & 100k+ views"
+              glowColor="rgba(236, 72, 153, 0.5)"
+              href="/flowboard"
             />
             <ProjectCard
               image="/projects/planthopper.png"
               title="plant hopper"
               year="2025"
-              description={<>auto aim and water plants based on moisture levels. 1st @ <HoverLink href="https://hackthevalley.io">hack the valley</HoverLink></>}
+              description="auto aim and water plants based on moisture levels. 1st @ hack the valley"
+              glowColor="rgba(120, 100, 80, 0.5)"
+              href="/planthopper"
             />
             <ProjectCard
               image="/projects/playcreate.png"
               title="playcreate"
               year="2025"
-              description={<>ai coaching tool, 15m+ views on socials, won startup comp, flown out to sf</>}
+              description="ai coaching tool, 15m+ views on socials, won startup comp, flown out to sf"
+              glowColor="rgba(34, 197, 94, 0.5)"
+              href="/playcreate"
             />
           </div>
+          <Footer />
         </main>
     </div>
   );

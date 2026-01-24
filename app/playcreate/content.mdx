@@ -1,0 +1,133 @@
+import { HoverLink } from '@/components/hoverlink';
+
+## Overview
+
+Sports are analytical. There are endless strategies, plays, and other things for coaches to teach.
+These strategies are often taught on whiteboards with magnets and markers... Old School. 
+
+We built PlayCreate to modernize the way coaches coach.  
+
+With PlayCreate, you can create your own animations,
+set formations, and do everything a traditional coaching board can do. However, our AI agent can automate these tasks,
+analyzing the board and creating these animations/formations for you.
+
+<video 
+  src="/caseStudyMedia/playCreateDemo.mp4" 
+  controls 
+  autoPlay 
+  loop 
+  muted
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## The Mission
+
+PlayCreate was built to compete in the <HoverLink href="https://www.unfounders.com/">Unfounders</HoverLink> startup competition.
+The goal was very simple go viral & build some thing cool. The top 5 teams will get flown out to San Francisco to stay 
+at a hacker house for a few days and explore tech and SF's culture.  
+
+So we had to participate. Together, me, <HoverLink href="https://www.linkedin.com/in/muhammadalimamdani">Muhammad</HoverLink>, <HoverLink href="https://www.linkedin.com/in/david-liang-012357267">David</HoverLink>, and <HoverLink href="https://www.linkedin.com/in/victorg8182">Victor</HoverLink> spent late nights together, did silly things, and went on
+some crazy adventures.
+
+<img 
+  src="/caseStudyMedia/playCreatem3.png" 
+  alt="playcreate guys" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## How it works technically
+
+PlayCreate's frontend was built with React and its backend is built with JavaScript. User data, saved plays and saved boards were stored with PostgreSQL.
+The way animations and formations are set is similar to a coordinate system.   
+
+Under the hood, think of the field/court as a graph
+with an x and y axis, so that we can track player positions with an x and y coordinate. This allows us to call OpenAI's api and let 
+it generate different positions, and then we animate it using linear interpolation and some calculations:
+
+<div style={{ 
+  background: '#1e1e1e', 
+  padding: '16px', 
+  borderRadius: '8px', 
+  margin: '20px 0 4px 0',
+  overflowX: 'auto',
+  maxWidth: '100%'
+}}>
+<pre style={{ margin: 0, whiteSpace: 'pre', overflowX: 'auto' }}>
+<code style={{ 
+  color: '#d4d4d4', 
+  fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace',
+  fontSize: '0.875rem',
+  lineHeight: '1.6'
+}}>{`export const lerp: InterpolationFunction = (from, to, progress) => ({
+  x: from.x + (to.x - from.x) * progress,
+  y: from.y + (to.y - from.y) * progress,
+});`}</code>
+</pre>
+</div>
+<p style={{ color: '#999', fontSize: '0.8rem', marginTop: '4px', marginBottom: '24px' }}>Linear interpolation function which is then used with other functions to animate</p>
+
+<img 
+  src="/caseStudyMedia/playCreateGrid.png" 
+  alt="playcreate grid" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 4px auto',
+    display: 'block'
+  }}
+/>
+<p style={{ color: '#999', fontSize: '0.8rem', marginTop: '4px', marginBottom: '24px' }}>Visual representation of how it works under the hood</p>
+
+## Virality
+
+So remember how I said the goal of the competition is to go viral? Well... we did! <HoverLink href="https://www.linkedin.com/in/victorg8182">Victor</HoverLink> is a social media genius, so we 
+just listened to his instructions and then we got over 10 million total views by creating brainrot basketball videos. 
+
+The bulk of the views came from Youtube Shorts, but we also documented our journey on Twitter, where it was less brainrot and more 
+so documentation. There, I managed to grow my Twitter following and also meet some amazing people who helped us out in our journey.
+
+<img 
+  src="/caseStudyMedia/playCreateYoutube.png" 
+  alt="youtube stats" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## Results
+
+We won the competition and we went to San Francisco! In this journey, we got over 1000 users, 10 million+ views, and were forming
+partnerships with 4 basketball clubs in Canada. We went to San Francisco in October, and we learned a LOT. Great experience. 
+
+Thank you to my group for being so disciplined and easy to work with over these months 🙏.    
+
+This journey will always be a core memory, especially since we did this REALLY early on in our careers... like first month of first year of university.
+
+<img 
+  src="/caseStudyMedia/playCreateSF.jpeg" 
+  alt="boys in SF" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>

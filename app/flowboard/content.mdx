@@ -1,0 +1,94 @@
+import { HoverLink } from '@/components/hoverlink';
+
+## Overview
+
+Traditional animation is slow. Animators need to draw frame by frame and refine motion by hand. What if instead... you could 
+simplify this process and create high quality animations in seconds?  
+
+That's what FlowBoard does. You can now turn rough sketches into full animations in just two clicks.
+
+In a nutshell, here's the workflow:  
+Sketch → Polish Button → Generate Button → Repeat forever
+
+<video 
+  src="/caseStudyMedia/flowboarddemo.mp4" 
+  controls 
+  autoPlay 
+  loop 
+  muted
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## Inspiration
+
+My team, <HoverLink href="https://www.danielpu.dev/">Daniel</HoverLink>, <HoverLink href="https://jame.li">James</HoverLink>, <HoverLink href="https://www.linkedin.com/in/ferdinand-simmons-zhang-39ba62297">Ferdinand</HoverLink>, and I were brainstorming ideas for <HoverLink href="https://hackwestern.com">Hack Western</HoverLink>, and this was when Gemini 3 and Nano Banana 2 just got released.   
+
+On Twitter, we stumbled across a few tweets, and realized that Nano Banana 2 is very powerful, especially when used with VEO because it can translate image annotations formed from NanoBanana to create accurate videos.  
+
+So we decided to turn this into a full project, where users can annotate on images or sketch their own to create animations of infinite length. The concept of the project is quite similar to <HoverLink href="https://tryvibedraw.com">Vibe Draw</HoverLink>, so we took a lot of inspiration from them.  
+
+Instead of sketch → polish → generate 3d model → create a 3d world,   
+FlowBoard was sketch → polish → generate video → create full animation
+
+<img 
+  src="/caseStudyMedia/flowBoardInspo.png" 
+  alt="FlowBoard Inspiration" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## How it works technically
+
+FlowBoard is split into a React (Vite) frontend and a Python backend that talks to Vertex AI (Veo for video gen, Nano Banana for image enhancement, and gemini-2.0 flash for video analysis).
+
+On the frontend, the drawing canvas is built with the tldraw library. Your shapes are saved automatically in IndexedDB, so sketches persist across refreshes. After you draw, there is a polish button, powered by Nano Banana, that turns rough strokes into a cleaner starting frame by smoothing lines, cleaning up the sketch, adding colour, and producing a more consistent image for generation.
+
+When you hit Generate, the frontend sends the prompt and polished frame to the backend. The backend starts an async job (`POST /video`) and triggers Veo to generate a short clip, writing results to a Google Cloud Storage bucket. The frontend then polls (`GET /video/\{jobId\}`) until it is done and returns a videoURL you can play. A new canvas is created, where the base is the video's last frame, so that you can sketch on it again, and extend the previous video into longer animations.
+
+<img 
+  src="/caseStudyMedia/flowBoardTechStack.jpg" 
+  alt="FlowBoard Tech Stack" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
+## Results
+
+And the results? We're really proud with how FlowBoard turned out :). It's super functional!
+
+At the time of writing this, we've achieved over 1000 users, 100k+ views (twitter & linkedin), and 100+ stars on <HoverLink href="https://github.com/austinjiann/FlowBoard">GitHub</HoverLink> (pls go star us 🙏). 
+
+We also won second place at Hack Western and won Ninja Creamis so we can make our own ice cream and eat ice cream everyday.   
+
+To <HoverLink href="https://www.linkedin.com/in/ferdinand-simmons-zhang-39ba62297">Ferdinand</HoverLink>, <HoverLink href="https://www.danielpu.dev/">Daniel</HoverLink>, and <HoverLink href="https://jame.li">James</HoverLink>, thank you for being a goated team, I genuinely learned a lot from you guys, and it was really fun building with y'all 🫡!
+
+Links: <HoverLink href="https://flowboard.tech">FlowBoard</HoverLink>, <HoverLink href="https://github.com/austinjiann/FlowBoard">GitHub</HoverLink>
+
+<img 
+  src="/caseStudyMedia/hackWesternWin.jpeg" 
+  alt="We Won" 
+  style={{ 
+    width: '100%', 
+    maxWidth: '750px', 
+    borderRadius: '12px', 
+    margin: '0 auto 20px auto',
+    display: 'block'
+  }}
+/>
+
