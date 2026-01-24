@@ -36,10 +36,22 @@ export default function Home() {
               description={<>agentic index funds for polymarket. winner @ <HoverLink href="https://www.nexhacks.com/">nexhacks</HoverLink></>}
             />
             <ProjectCard
-              image="/projects/placeholder.png"
+              image="/projects/flowboard.png"
               title="flowboard"
               year="2025"
               description="rough sketches to animations, frame by frame. 100+ github stars & 100k+ views"
+            />
+            <ProjectCard
+              image="/projects/planthopper.png"
+              title="plant hopper"
+              year="2025"
+              description={<>auto aim and water plants based on moisture levels. 1st @ <HoverLink href="https://hackthevalley.io">hack the valley</HoverLink></>}
+            />
+            <ProjectCard
+              image="/projects/playcreate.png"
+              title="playcreate"
+              year="2025"
+              description={<>ai coaching tool, 15m+ views on socials, won startup comp, flown out to sf</>}
             />
           </div>
         </main>

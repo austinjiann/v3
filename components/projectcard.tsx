@@ -1,10 +1,12 @@
 'use client';
 
+import { ReactNode } from 'react';
+
 interface ProjectCardProps {
     image: string;
     title: string;
     year: string;
-    description: string;
+    description: ReactNode;
     href?: string;
 }
 
@@ -15,13 +17,8 @@ export const ProjectCard = ({
     description,
     href
 }: ProjectCardProps) => {
-    return (
-        <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-        >
+    const content = (
+        <>
             <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100">
                 <img src={image} alt={title} className="h-full w-full object-cover"/>
             </div>
@@ -30,6 +27,21 @@ export const ProjectCard = ({
                 <span className="text-gray-500">{year}</span>
             </div>
             <p className="text-gray-500 pt-1">{description}</p>
-        </a>
-    )
+        </>
+    );
+
+    if (href) {
+        return (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+            >
+                {content}
+            </a>
+        );
+    }
+
+    return <div className="block">{content}</div>;
 }
