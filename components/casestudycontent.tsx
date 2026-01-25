@@ -48,6 +48,7 @@ export function CaseStudyContent({ title, image, imageAlt, timeline, techStack, 
         tech stack: {techStack}
       </motion.p>
       <motion.div
+        className="w-full max-w-full overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}

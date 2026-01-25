@@ -19,7 +19,6 @@ analyzing the board and creating these animations/formations for you.
   muted
   style={{ 
     width: '100%', 
-    maxWidth: '750px', 
     borderRadius: '12px', 
     margin: '0 auto 20px auto',
     display: 'block'
@@ -40,7 +39,6 @@ some crazy adventures.
   alt="playcreate guys" 
   style={{ 
     width: '100%', 
-    maxWidth: '750px', 
     borderRadius: '12px', 
     margin: '0 auto 20px auto',
     display: 'block'
@@ -57,22 +55,23 @@ with an x and y axis, so that we can track player positions with an x and y coor
 it generate different positions, and then we animate it using linear interpolation and some calculations:
 
 <div style={{ 
-  background: '#1e1e1e', 
+  background: '#fafafa', 
   padding: '16px', 
   borderRadius: '8px', 
   margin: '20px 0 4px 0',
   overflowX: 'auto',
-  maxWidth: '100%'
+  maxWidth: '100%',
+  border: '1px solid #e5e5e5'
 }}>
 <pre style={{ margin: 0, whiteSpace: 'pre', overflowX: 'auto' }}>
 <code style={{ 
-  color: '#d4d4d4', 
+  color: '#171717', 
   fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace',
   fontSize: '0.875rem',
   lineHeight: '1.6'
 }}>{`export const lerp: InterpolationFunction = (from, to, progress) => ({
-  x: from.x + (to.x - from.x) * progress,
-  y: from.y + (to.y - from.y) * progress,
+    x: from.x + (to.x - from.x) * progress,
+    y: from.y + (to.y - from.y) * progress,
 });`}</code>
 </pre>
 </div>
@@ -83,7 +82,6 @@ it generate different positions, and then we animate it using linear interpolati
   alt="playcreate grid" 
   style={{ 
     width: '100%', 
-    maxWidth: '750px', 
     borderRadius: '12px', 
     margin: '0 auto 4px auto',
     display: 'block'
@@ -104,7 +102,6 @@ so documentation. There, I managed to grow my Twitter following and also meet so
   alt="youtube stats" 
   style={{ 
     width: '100%', 
-    maxWidth: '750px', 
     borderRadius: '12px', 
     margin: '0 auto 20px auto',
     display: 'block'
@@ -125,7 +122,6 @@ This journey will always be a core memory, especially since we did this REALLY e
   alt="boys in SF" 
   style={{ 
     width: '100%', 
-    maxWidth: '750px', 
     borderRadius: '12px', 
     margin: '0 auto 20px auto',
     display: 'block'
