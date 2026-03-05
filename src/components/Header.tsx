@@ -1,6 +1,7 @@
 'use client';
 
-import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
+import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
+import { RiTwitterXFill } from 'react-icons/ri';
 import * as motion from 'motion/react-client';
 
 export function Header() {
@@ -13,27 +14,30 @@ export function Header() {
     >
       <h2 className="text-1xl font-semibold text-black">austin jian</h2>
       <div className="flex items-center gap-3">
-        <a 
-          href="https://linkedin.com/in/austin-jian" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://linkedin.com/in/austin-jian"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-black hover:opacity-70 transition-opacity"
+          aria-label="LinkedIn"
         >
           <LinkedInLogoIcon width={20} height={20} />
         </a>
-        <a 
-          href="https://twitter.com/austinjian_" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://twitter.com/austinjian_"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-black hover:opacity-70 transition-opacity"
+          aria-label="Twitter"
         >
-          <TwitterLogoIcon width={20} height={20} />
+          <RiTwitterXFill size={20} />
         </a>
-        <a 
-          href="https://github.com/austinjiann" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://github.com/austinjiann"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-black hover:opacity-70 transition-opacity"
+          aria-label="GitHub"
         >
           <GitHubLogoIcon width={20} height={20} />
         </a>

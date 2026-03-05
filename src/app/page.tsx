@@ -1,16 +1,15 @@
-import { HoverLink } from '@/components/hoverlink';
-import { Box, Theme } from "@radix-ui/themes";
-import { ExperienceCard } from '@/components/experiencecard';
-import { ProjectCard } from '@/components/projectcard';
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
+import { HoverLink } from '@/components/HoverLink';
+import { ExperienceCard } from '@/components/ExperienceCard';
+import { ProjectCard } from '@/components/ProjectCard';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-center font-sans bg-white">
         <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
           <Header />
           <p className="text-lg text-black pt-2">cs <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> @uwaterloo</HoverLink></p>
-          <h2 className="text-1xl font-semibold text-black pt-2">what i've been up to</h2>
+          <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
           <ExperienceCard 
             logo="/experience/untolabs.png"
             company="Unto Labs"
@@ -30,7 +29,7 @@ export default function Home() {
             href="https://hackthe6ix.com"
             index={1}
           />
-          <h2 className="text-1xl font-semibold text-black pb-2">cool projects</h2>
+          <h2 className="text-1xl font-semibold text-black pb-2">projects</h2>
           <div className="grid grid-cols-2 gap-6 w-full">
             <ProjectCard
               image="/projects/pindex.png"
@@ -45,7 +44,7 @@ export default function Home() {
               image="/projects/flowboard.png"
               title="flowboard"
               year="2025"
-              description="rough sketches to animations, frame by frame. 100+ stars & 100k+ views"
+              description="turn rough sketches to animations, frame by frame. 100+ stars & 200k+ views"
               glowColor="rgba(236, 72, 153, 0.5)"
               href="/flowboard"
               index={1}
@@ -63,7 +62,7 @@ export default function Home() {
               image="/projects/playcreate.png"
               title="playcreate"
               year="2025"
-              description="ai coaching tool, 15m+ views on socials, won startup comp, flown out to sf"
+              description="ai coaching tool, 30m views on socials, won startup comp - flown out to sf"
               glowColor="rgba(34, 197, 94, 0.5)"
               href="/playcreate"
               index={3}

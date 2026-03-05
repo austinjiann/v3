@@ -1,6 +1,6 @@
 'use client';
 
-import { WebringBadge } from '@/components/webringbage';
+import { WebringBadge } from '@/components/WebringBadge';
 import * as motion from 'motion/react-client';
 
 export function Footer() {

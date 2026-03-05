@@ -25,12 +25,12 @@ export function CaseStudyHeader({ links }: CaseStudyHeaderProps) {
       </Link>
       <div className="flex items-center gap-3">
         {links?.external && (
-          <a href={links.external} target="_blank" rel="noopener noreferrer" className="text-black hover:opacity-70 transition-opacity">
+          <a href={links.external} target="_blank" rel="noopener noreferrer" className="text-black hover:opacity-70 transition-opacity" aria-label="External link">
             <FiExternalLink size={20} />
           </a>
         )}
         {links?.github && (
-          <a href={links.github} target="_blank" rel="noopener noreferrer" className="text-black hover:opacity-70 transition-opacity">
+          <a href={links.github} target="_blank" rel="noopener noreferrer" className="text-black hover:opacity-70 transition-opacity" aria-label="GitHub repository">
             <GitHubLogoIcon width={20} height={20} />
           </a>
         )}

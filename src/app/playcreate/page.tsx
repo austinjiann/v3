@@ -1,9 +1,9 @@
 import Content from './content.mdx';
-import { CaseStudyHeader } from '@/components/casestudyheader';
-import { TableOfContents } from '@/components/tableofcontents';
-import { Footer } from '@/components/footer';
-import { HoverLink } from '@/components/hoverlink';
-import { CaseStudyContent } from '@/components/casestudycontent';
+import { CaseStudyHeader } from '@/components/CaseStudyHeader';
+import { TableOfContents } from '@/components/TableOfContents';
+import { Footer } from '@/components/Footer';
+import { HoverLink } from '@/components/HoverLink';
+import { CaseStudyContent } from '@/components/CaseStudyContent';
 
 const tocItems = [
   { id: 'overview', label: 'Overview' },
