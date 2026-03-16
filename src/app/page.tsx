@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex min-h-screen items-start justify-center font-sans bg-white">
         <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
           <Header />
-          <p className="text-lg text-black pt-2">cs <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> @uwaterloo</HoverLink></p>
+          <p className="text-lg text-black pt-2">cs @ <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> uwaterloo</HoverLink></p>
           <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
           <ExperienceCard 
             logo="/experience/untolabs.png"
