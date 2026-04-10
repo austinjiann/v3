@@ -10,9 +10,10 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://austinjian.ca"),
   title: "Austin Jian",
   description: "Austin Jian - CS student at University of Waterloo building beautiful software.",
-  keywords: ["Austin Jian", "University of Waterloo", "software engineer", "FlowBoard", "PlayCreate", "Plant Hopper", "Hack the 6ix", "Unto Labs", "CS student", "developer"],
+  keywords: ["Austin Jian", "University of Waterloo", "software engineer", "FlowBoard", "PlayCreate", "Phoebe", "Unto Labs", "CS student", "developer"],
   authors: [{ name: "Austin Jian" }],
   creator: "Austin Jian",
   openGraph: {
