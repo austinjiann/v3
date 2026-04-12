@@ -36,7 +36,7 @@ export default function Home() {
               title="FlowBoard"
               description="turn rough sketches to animations, frame by frame. 100+ stars & 200k+ views"
               glowColor="rgba(125, 211, 252, 0.8)"
-              glowGradient="radial-gradient(circle at top left, rgba(244, 114, 182, 0.56), transparent 50%), radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.64), transparent 54%)"
+              glowGradient="radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.64), transparent 54%)"
               href="https://github.com/austinjiann/FlowBoard"
               icons={[{ type: 'github' }]}
               index={1}

@@ -156,37 +156,7 @@ const flowers: FlowerConfig[] = flowerBases.map((flower) => {
 export const PhoebeBackground = () => {
     return (
         <div className="absolute inset-0 overflow-hidden">
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: `
-                        linear-gradient(135deg,
-                            rgba(255, 253, 249, 1) 0%,
-                            rgba(255, 245, 235, 0.96) 18%,
-                            rgba(255, 233, 219, 0.86) 38%,
-                            rgba(249, 224, 216, 0.74) 58%,
-                            rgba(250, 231, 206, 0.58) 82%,
-                            rgba(252, 240, 216, 0.5) 100%
-                        )
-                    `,
-                }}
-            />
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: `
-                        radial-gradient(circle at 52% 60%, rgba(245, 155, 123, 0.16) 0%, transparent 28%),
-                        radial-gradient(circle at 82% 64%, rgba(230, 90, 97, 0.12) 0%, transparent 24%),
-                        radial-gradient(circle at 73% 38%, rgba(243, 184, 77, 0.1) 0%, transparent 20%)
-                    `,
-                }}
-            />
-            <div
-                className="absolute inset-0"
-                style={{
-                    background: 'linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.88) 22%, rgba(255, 255, 255, 0.1) 42%, rgba(255, 255, 255, 0) 54%)',
-                }}
-            />
+            <div className="absolute inset-0 bg-white" />
 
             {flowers.map((flower) => (
                 <motion.div
@@ -199,7 +169,6 @@ export const PhoebeBackground = () => {
                         aspectRatio: '1',
                         zIndex: flower.zIndex,
                         transformOrigin: 'bottom center',
-                        filter: `drop-shadow(0 14px 24px ${flower.glow})`,
                     }}
                     animate={{ scaleY: flower.growthFrames }}
                     transition={{
