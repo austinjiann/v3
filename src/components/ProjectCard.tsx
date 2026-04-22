@@ -38,11 +38,9 @@ export const ProjectCard = ({
     index = 0,
 }: ProjectCardProps) => {
     return (
-        <motion.a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block group"
+        <motion.div
+            onClick={() => href && window.open(href, '_blank', 'noopener,noreferrer')}
+            className={`block group${href ? ' cursor-pointer' : ''}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
@@ -94,6 +92,6 @@ export const ProjectCard = ({
                 )}
             </div>
             <p className="text-gray-500 pt-1">{description}</p>
-        </motion.a>
+        </motion.div>
     )
 }

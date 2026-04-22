@@ -3,7 +3,6 @@ import { ExperienceCard } from '@/components/ExperienceCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { PhoebeBackground } from '@/components/PhoebeBackground';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-center font-sans bg-white">
@@ -12,10 +11,12 @@ export default function Home() {
           <p className="text-lg text-black pt-2">cs @ <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> uwaterloo</HoverLink></p>
           <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
           <ExperienceCard
-            logo="/experience/orange_phoebe.svg"
+            logo="/experience/phoebe_logo.jpeg"
             company="Phoebe"
             role="incoming engineering intern"
-            customBackground={<PhoebeBackground />}
+            backgroundImage="/experience/phoebe_banner.svg"
+            gradientOverlay="linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 55%)"
+            gradientOnTop={true}
             href="https://www.phoebe.work"
             index={1}
           />
@@ -24,7 +25,7 @@ export default function Home() {
             company="Unto Labs"
             role="software engineering intern"
             backgroundImage="/experience/unto.svg"
-            gradientOverlay="linear-gradient(to right, rgba(245, 245, 245, 1) 0%, rgba(245, 245, 245, 1) 25%, rgba(180, 180, 180, 1) 45%, rgba(100, 100, 100, 1) 65%, rgba(50, 50, 50, 1) 85%, rgba(35, 35, 35, 1) 100%)"
+            gradientOverlay="linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(35, 35, 35, 1) 55%)"
             href="https://www.untolabs.com"
             index={0}
           />
