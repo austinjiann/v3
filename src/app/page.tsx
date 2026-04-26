@@ -51,7 +51,7 @@ export default function Home() {
             <ProjectCard
               image="/projects/arcki.png"
               title="Arcki"
-              description="generate 3d models and visualize them on a stunning world map. 60 stars"
+              description="generate 3d models and visualize them on a stunning world map."
               glowColor="rgba(45, 212, 191, 0.62)"
               glowGradient="radial-gradient(circle at top left, rgba(74, 222, 128, 0.44), transparent 46%), radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.46), transparent 56%)"
               href="https://arcki.tech"
