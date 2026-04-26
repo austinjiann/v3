@@ -8,8 +8,11 @@ interface ExperienceCardProps {
     company: string;
     role?: string;
     backgroundImage?: string;
+    backgroundSize?: string;
+    backgroundPosition?: string;
     gradientOverlay?: string;
     gradientOnTop?: boolean;
+    darkOnHover?: boolean;
     customBackground?: ReactNode;
     href?: string;
     index?: number;
@@ -20,13 +23,16 @@ export const ExperienceCard = ({
     company,
     role,
     backgroundImage,
+    backgroundSize = 'cover',
+    backgroundPosition = 'center',
     gradientOverlay,
     gradientOnTop = false,
+    darkOnHover = false,
     customBackground,
     href,
     index = 0
 }: ExperienceCardProps) => {
-    const cardClasses = "group relative block w-full overflow-hidden rounded-xl border border-transparent hover:border-gray-200 bg-white transition-colors duration-500 cursor-pointer";
+    const cardClasses = `group relative block w-full overflow-hidden rounded-xl border border-transparent bg-white transition-colors duration-500 cursor-pointer ${darkOnHover ? 'hover:border-white/35 hover:bg-zinc-700' : 'hover:border-gray-200'}`;
     const animationProps = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -38,8 +44,8 @@ export const ExperienceCard = ({
             <div className="relative z-10 flex items-center gap-4 p-4">
                 <img src={logo} alt={company} className="h-14 w-14 rounded-xl ring-1 ring-gray-200"/>
                 <div>
-                    <p className="font-semibold text-black">{company}</p>
-                    {role && <p className="text-gray-500 transition-opacity duration-500 group-hover:opacity-0">{role}</p>}
+                    <p className={`font-semibold transition-colors duration-500 ${darkOnHover ? 'text-black group-hover:text-white' : 'text-black'}`}>{company}</p>
+                    {role && <p className={`transition-colors duration-500 ${darkOnHover ? 'text-gray-500 group-hover:text-gray-300' : 'text-gray-500 group-hover:text-gray-700'}`}>{role}</p>}
                 </div>
             </div>
 
@@ -61,8 +67,8 @@ export const ExperienceCard = ({
                             className="absolute inset-0"
                             style={{
                                 backgroundImage: `url(${backgroundImage})`,
-                                backgroundSize: 'auto 100%',
-                                backgroundPosition: 'right center',
+                                backgroundSize,
+                                backgroundPosition,
                                 backgroundRepeat: 'no-repeat',
                             }}
                         />
