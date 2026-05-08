@@ -10,14 +10,14 @@ export default function Home() {
           <Header />
           <ul className="text-base text-gray-500 pt-2 list-disc list-outside pl-8">
             <li>cs @ <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> uwaterloo</HoverLink>, originally from toronto</li>
-            <li>currently @ <HoverLink href="https://www.untolabs.com"><img src="/experience/untolabs.png" alt="unto labs" className="inline h-[1em] w-auto rounded-sm" /> unto labs</HoverLink>, incoming @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink> in nyc</li>
-            <li>exploring infra and product engineering, dabbling in other areas too!</li>
+            <li>I'm currently based in nyc, working @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink> as a swe intern</li>
+            <li>currently learning infra and ml, but interested in all areas of tech</li>
           </ul>
           <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
           <ExperienceCard
             logo="/experience/phoebe_logo.jpeg"
             company="Phoebe"
-            role="incoming engineering intern"
+            role="software engineering intern"
             backgroundImage="/experience/phoebe_banner.svg"
             gradientOverlay="linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 15%, rgba(255, 255, 255, 0) 35%)"
             gradientOnTop={true}
