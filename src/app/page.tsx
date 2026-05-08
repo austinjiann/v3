@@ -9,9 +9,8 @@ export default function Home() {
         <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
           <Header />
           <ul className="text-base text-gray-500 pt-2 list-disc list-outside pl-8">
-            <li>cs @ <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> uwaterloo</HoverLink>, originally from toronto</li>
-            <li>I'm currently based in nyc, working @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink> as a swe intern</li>
-            <li>currently learning infra and ml, but interested in all areas of tech</li>
+            <li>I study cs @ <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> uwaterloo</HoverLink></li>
+            <li>currently based in new york city working @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink></li>
           </ul>
           <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
           <ExperienceCard
