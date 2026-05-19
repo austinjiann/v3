@@ -10,6 +10,7 @@ interface ExperienceCardProps {
     backgroundImage?: string;
     backgroundSize?: string;
     backgroundPosition?: string;
+    backgroundColor?: string;
     gradientOverlay?: string;
     gradientOnTop?: boolean;
     darkOnHover?: boolean;
@@ -25,6 +26,7 @@ export const ExperienceCard = ({
     backgroundImage,
     backgroundSize = 'cover',
     backgroundPosition = 'center',
+    backgroundColor,
     gradientOverlay,
     gradientOnTop = false,
     darkOnHover = false,
@@ -32,7 +34,7 @@ export const ExperienceCard = ({
     href,
     index = 0
 }: ExperienceCardProps) => {
-    const cardClasses = `group relative block w-full overflow-hidden rounded-xl border border-transparent bg-white transition-colors duration-500 cursor-pointer ${darkOnHover ? 'hover:border-white/35 hover:bg-zinc-700' : 'hover:border-gray-200'}`;
+    const cardClasses = `group relative block w-full overflow-hidden rounded-xl border border-transparent bg-white transition-colors duration-500 cursor-pointer focus:outline-none focus-visible:outline-none ${darkOnHover ? 'hover:border-white/70 hover:bg-zinc-700' : 'hover:border-gray-200'}`;
     const animationProps = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -63,15 +65,24 @@ export const ExperienceCard = ({
                     )}
 
                     {backgroundImage && (
-                        <div
-                            className="absolute inset-0"
-                            style={{
-                                backgroundImage: `url(${backgroundImage})`,
-                                backgroundSize,
-                                backgroundPosition,
-                                backgroundRepeat: 'no-repeat',
-                            }}
-                        />
+                        <>
+                            <div
+                                className="absolute inset-0"
+                                style={{
+                                    backgroundImage: `url(${backgroundImage})`,
+                                    backgroundSize,
+                                    backgroundPosition,
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundColor: backgroundColor,
+                                }}
+                            />
+                            {backgroundColor && (
+                                <div
+                                    className="pointer-events-none absolute inset-0"
+                                    style={{ boxShadow: 'inset 0 0 24px 4px rgba(255,255,255,0.18)' }}
+                                />
+                            )}
+                        </>
                     )}
 
                     {gradientOnTop && gradientOverlay && (

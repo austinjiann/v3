@@ -5,12 +5,17 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-start justify-center font-sans bg-white">
-        <main className="flex w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
+    <div className="flex min-h-screen items-stretch justify-center font-sans bg-white">
+        <main className="flex min-h-screen w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
           <Header />
           <ul className="text-base text-gray-500 pt-2 list-disc list-outside pl-8">
-            <li>I study cs @ <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> uwaterloo</HoverLink></li>
-            <li>currently based in new york city working @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink></li>
+            <li>I study computer science @ the <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> university of waterloo</HoverLink></li>
+            <li>currently based in nyc working @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink>, doing work w/ agents
+              <ul className="list-[circle] list-outside pl-6">
+                <li>I previously did a bit of everything @ <HoverLink href="https://www.untolabs.com"><img src="/experience/untolabs.png" alt="unto labs" className="inline h-[1em] w-auto rounded-sm" /> unto labs</HoverLink>, ranging from product engineering, blockchain, and agents</li>
+              </ul>
+            </li>
+            <li>Interested in distributed systems, infra, and all other areas of tech!</li>
           </ul>
           <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
           <ExperienceCard
@@ -28,8 +33,11 @@ export default function Home() {
             company="Unto Labs"
             role="software engineering intern"
             backgroundImage="/experience/unto.svg"
-            backgroundSize="auto 90%"
-            backgroundPosition="right bottom"
+            backgroundSize="100% 108%"
+            backgroundPosition="center top"
+            backgroundColor="#000000"
+            gradientOverlay="linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0) 35%)"
+            gradientOnTop={true}
             darkOnHover={true}
             href="https://www.untolabs.com"
             index={0}
@@ -40,9 +48,7 @@ export default function Home() {
             <ProjectCard
               image="/projects/flowboard.png"
               title="FlowBoard"
-              description="turn rough sketches to animations, frame by frame. 100+ stars & 200k+ views"
-              glowColor="rgba(125, 211, 252, 0.8)"
-              glowGradient="radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.64), transparent 54%)"
+              description="turn rough sketches to animations on a canvas. 100+ stars & 200k+ views."
               href="https://github.com/austinjiann/FlowBoard"
               icons={[{ type: 'github' }]}
               index={1}
@@ -51,31 +57,9 @@ export default function Home() {
               image="/projects/arcki.png"
               title="Arcki"
               description="generate 3d models and visualize them on a stunning world map."
-              glowColor="rgba(45, 212, 191, 0.62)"
-              glowGradient="radial-gradient(circle at top left, rgba(74, 222, 128, 0.44), transparent 46%), radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.46), transparent 56%)"
               href="https://arcki.tech"
               icons={[{ type: 'github', href: 'https://github.com/jli2007/Arcki' }, { type: 'external' }]}
               index={3}
-            />
-            <ProjectCard
-              image="/projects/playcreate.png"
-              title="PlayCreate"
-              description={<>first attempt at building. bad product but got some views + monetized on youtube</>}
-              glowColor="rgba(74, 222, 128, 0.58)"
-              glowGradient="radial-gradient(circle at top left, rgba(187, 247, 208, 0.5), transparent 44%), radial-gradient(circle at bottom right, rgba(74, 222, 128, 0.46), transparent 52%)"
-              href="https://tryplaycreate.com"
-              icons={[{ type: 'youtube', href: 'https://www.youtube.com/@playcreate-yt' }, { type: 'external' }]}
-              index={2}
-            />
-            <ProjectCard
-              image="/projects/pindex.svg"
-              title="Pindex"
-              description={<>chrome extension to create index funds for polymarket. winner @ <HoverLink href="https://www.nexhacks.com/">nexhacks</HoverLink></>}
-              glowColor="rgba(30, 58, 138, 0.66)"
-              glowGradient="radial-gradient(circle at top left, rgba(96, 165, 250, 0.38), transparent 42%), radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.44), transparent 54%)"
-              href="https://github.com/dtpu/Pindex"
-              icons={[{ type: 'github' }]}
-              index={0}
             />
           </div>
           <Footer />

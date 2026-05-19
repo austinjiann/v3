@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <motion.footer 
-      className="w-full flex items-center justify-between pt-8 pb-4"
+      className="mt-auto w-full flex items-center justify-between pt-8 pb-4"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8 }}

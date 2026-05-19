@@ -49,18 +49,18 @@ export const ProjectCard = ({
                 {glowGradient && (
                     <div
                         aria-hidden="true"
-                        className="pointer-events-none absolute -inset-6 rounded-[2.5rem] opacity-95 blur-[76px] transition-all duration-300 group-hover:scale-[1.04] group-hover:opacity-100"
+                        className="pointer-events-none absolute -inset-6 rounded-[2.5rem] opacity-95 blur-[76px]"
                         style={{ background: glowGradient }}
                     />
                 )}
                 <div
-                    className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 transition-shadow duration-300 group-hover:shadow-[0_0_72px_-14px_var(--glow-color)]"
+                    className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100"
                     style={{ '--glow-color': glowColor } as CSSProperties}
                 >
                     <img
                         src={image}
                         alt={title}
-                        className={`h-full w-full ${objectFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                        className={`h-full w-full ${objectFit === 'contain' ? 'object-contain' : 'object-cover'} transition-transform duration-300 ease-out group-hover:scale-[1.03]`}
                         style={{
                             objectPosition: imagePosition,
                             transform: imageScale === 1 ? undefined : `scale(${imageScale})`,
