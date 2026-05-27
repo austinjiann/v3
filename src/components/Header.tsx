@@ -15,7 +15,7 @@ export function Header() {
       <h2 className="text-1xl font-semibold text-black">austin jian</h2>
       <div className="flex items-center gap-3">
         <a
-          href="https://linkedin.com/in/austin-jian"
+          href="https://linkedin.com/in/austinjian"
           target="_blank"
           rel="noopener noreferrer"
           className="text-black hover:opacity-70 transition-opacity"
