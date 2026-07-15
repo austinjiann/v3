@@ -57,7 +57,7 @@ export default function Home() {
               image="/projects/arcki.png"
               title="Arcki"
               description="generate 3d models and visualize them on a stunning world map."
-              href="https://arcki.tech"
+              href="https://github.com/jli2007/Arcki"
               icons={[{ type: 'github', href: 'https://github.com/jli2007/Arcki' }, { type: 'external' }]}
               index={3}
             />
