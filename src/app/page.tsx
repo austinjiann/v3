@@ -58,7 +58,7 @@ export default function Home() {
               title="Arcki"
               description="generate 3d models and visualize them on a stunning world map."
               href="https://github.com/jli2007/Arcki"
-              icons={[{ type: 'github', href: 'https://github.com/jli2007/Arcki' }, { type: 'external' }]}
+              icons={[{ type: 'github', href: 'https://github.com/jli2007/Arcki' }]}
               index={3}
             />
           </div>
