@@ -1,69 +1,109 @@
 import { HoverLink } from '@/components/HoverLink';
-import { ExperienceCard } from '@/components/ExperienceCard';
-import { ProjectCard } from '@/components/ProjectCard';
-import { Footer } from '@/components/Footer';
+import { Row } from '@/components/Row';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { ThemeToggle } from '@/components/ThemeToggle';
+
+const workItems = [
+  {
+    logo: '/experience/phoebe_logo.jpeg',
+    title: 'phoebe',
+    description:
+      "phoebe builds ai agents for home healthcare agencies. I'm helping develop the agent and eval harness and also build features",
+    right: '2026',
+    href: 'https://www.phoebe.work',
+  },
+  {
+    logo: '/experience/untolabs.png',
+    title: 'unto labs',
+    description: (
+      <>
+        unto is building{' '}
+        <span className="relative z-10">
+          <HoverLink href="https://www.thru.org">
+            <img src="/experience/thru.png" alt="" className="inline h-[1em] w-auto rounded-sm align-[-0.15em]" /> thru
+          </HoverLink>
+        </span>
+        , an L1 blockchain. I did some product engineering with a consumer app and briefly touched
+        some blockchain and agent work
+      </>
+    ),
+    right: '2026',
+    href: 'https://www.untolabs.com',
+  },
+];
+
+const projectItems = [
+  {
+    logo: '/projects/flowboard.png',
+    title: 'flowboard',
+    description: 'a node-based creative canvas tool that turns rough sketches into infinitely long context-aware videos. 250k+ views, 150+ stars',
+    right: '2025',
+    href: 'https://github.com/austinjiann/FlowBoard',
+  },
+];
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-stretch justify-center font-sans bg-white">
-        <main className="flex min-h-screen w-full max-w-2xl flex-col items-start justify-start py-8 px-8">
+    <div className="flex min-h-screen justify-center bg-white font-sans dark:bg-neutral-950">
+      <main className="flex min-h-screen w-full max-w-xl flex-col px-6 py-12 sm:px-8">
+        <div className="flex items-center justify-between">
           <Header />
-          <ul className="text-base text-gray-500 pt-2 list-disc list-outside pl-8">
-            <li>I study computer science @ the <HoverLink href="https://uwaterloo.ca"><img src="/uw.jpeg" alt="uwaterloo" className="inline h-[1em] w-auto" /> university of waterloo</HoverLink></li>
-            <li>currently based in nyc working @ <HoverLink href="https://www.phoebe.work"><img src="/experience/phoebe_logo.jpeg" alt="phoebe" className="inline h-[1em] w-auto rounded-sm" /> phoebe</HoverLink>, doing work w/ agents
-              <ul className="list-[circle] list-outside pl-6">
-                <li>I previously did a bit of everything @ <HoverLink href="https://www.untolabs.com"><img src="/experience/untolabs.png" alt="unto labs" className="inline h-[1em] w-auto rounded-sm" /> unto labs</HoverLink>, ranging from product engineering, blockchain, and agents</li>
-              </ul>
-            </li>
-            <li>Interested in distributed systems, infra, and all other areas of tech!</li>
-          </ul>
-          <h2 className="text-1xl font-semibold text-black pt-2">work</h2>
-          <ExperienceCard
-            logo="/experience/phoebe_logo.jpeg"
-            company="Phoebe"
-            role="software engineering intern"
-            backgroundImage="/experience/phoebe_banner.svg"
-            gradientOverlay="linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 15%, rgba(255, 255, 255, 0) 35%)"
-            gradientOnTop={true}
-            href="https://www.phoebe.work"
-            index={1}
-          />
-          <ExperienceCard 
-            logo="/experience/untolabs.png"
-            company="Unto Labs"
-            role="software engineering intern"
-            backgroundImage="/experience/unto.svg"
-            backgroundSize="100% 108%"
-            backgroundPosition="center top"
-            backgroundColor="#000000"
-            gradientOverlay="linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0) 35%)"
-            gradientOnTop={true}
-            darkOnHover={true}
-            href="https://www.untolabs.com"
-            index={0}
-          />
-          <h2 className="text-1xl font-semibold text-black pb-2">projects</h2>
-          <div className="grid grid-cols-2 gap-6 w-full">
-            
-            <ProjectCard
-              image="/projects/flowboard.png"
-              title="FlowBoard"
-              description="turn rough sketches to animations on a canvas. 100+ stars & 200k+ views."
-              href="https://github.com/austinjiann/FlowBoard"
-              icons={[{ type: 'github' }]}
-              index={1}
-            />
-            <ProjectCard
-              image="/projects/arcki.png"
-              title="Arcki"
-              description="generate 3d models and visualize them on a stunning world map."
-              href="https://arcki.tech"
-              icons={[{ type: 'github', href: 'https://github.com/jli2007/Arcki' }, { type: 'external' }]}
-              index={3}
-            />
+          <ThemeToggle />
+        </div>
+
+        <div className="mt-6 space-y-4 leading-relaxed text-gray-600 dark:text-neutral-300">
+          <p>
+            I study computer science at the{' '}
+            <HoverLink href="https://uwaterloo.ca">
+              <img src="/uw.png" alt="" className="inline h-[1em] w-auto rounded-full align-[-0.15em]" /> university of waterloo
+            </HoverLink>
+            . I&apos;m currently based in nyc, where I work at{' '}
+            <HoverLink href="https://www.phoebe.work">
+              <img src="/experience/phoebe_logo.jpeg" alt="" className="inline h-[1em] w-auto rounded-sm align-[-0.15em]" /> phoebe
+            </HoverLink>
+            , but I&apos;m from toronto.
+          </p>
+          <p>
+            interested in all areas of tech, especially infra, distributed systems, product engineering, and consumer apps
+          </p>
+          <p>
+            reach out to my socials or austinjian07@gmail.com for all inquiries
+          </p>
+        </div>
+
+        <p className="mt-6 text-gray-500 dark:text-neutral-400">
+          <HoverLink href="https://twitter.com/austinjian_">twitter</HoverLink>
+          <span className="px-2"></span>
+          <HoverLink href="https://github.com/austinjiann">github</HoverLink>
+          <span className="px-2"></span>
+          <HoverLink href="https://linkedin.com/in/austinjian">linkedin</HoverLink>
+        </p>
+
+        <section className="mt-10">
+          <h2 className="text-lg font-medium text-black dark:text-white">
+            work <sup className="text-[0.6rem] text-gray-400 dark:text-neutral-500">{workItems.length}</sup>
+          </h2>
+          <div className="mt-2 flex flex-col">
+            {workItems.map((item, i) => (
+              <Row key={item.title} {...item} index={i} />
+            ))}
           </div>
-          <Footer />
-        </main>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="text-lg font-medium text-black dark:text-white">
+            projects <sup className="text-[0.6rem] text-gray-400 dark:text-neutral-500">{projectItems.length}</sup>
+          </h2>
+          <div className="mt-2 flex flex-col">
+            {projectItems.map((item, i) => (
+              <Row key={item.title} {...item} index={workItems.length + i} />
+            ))}
+          </div>
+        </section>
+
+        <Footer />
+      </main>
     </div>
   );
 }

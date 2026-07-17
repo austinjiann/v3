@@ -10,7 +10,7 @@ export const HoverLink = ({ href, children }: { href: string; children: React.Re
         color: 'inherit',
         fontWeight: 'inherit',
         textDecoration: 'none',
-        backgroundImage: 'linear-gradient(to right, #000, #000), linear-gradient(to right, #aaa, #aaa)',
+        backgroundImage: 'linear-gradient(to right, var(--link-underline), var(--link-underline)), linear-gradient(to right, #aaa, #aaa)',
         backgroundSize: '0% 1px, 100% 1px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'left bottom, left bottom',
