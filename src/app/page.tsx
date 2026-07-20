@@ -2,7 +2,6 @@ import { HoverLink } from '@/components/HoverLink';
 import { Row } from '@/components/Row';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ThemeToggle } from '@/components/ThemeToggle';
 
 const workItems = [
   {
@@ -45,14 +44,13 @@ const projectItems = [
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen justify-center bg-white font-sans dark:bg-neutral-950">
+    <div className="flex min-h-screen justify-center bg-white font-sans">
       <main className="flex min-h-screen w-full max-w-xl flex-col px-6 py-12 sm:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center">
           <Header />
-          <ThemeToggle />
         </div>
 
-        <div className="mt-6 space-y-4 leading-relaxed text-gray-600 dark:text-neutral-300">
+        <div className="mt-6 space-y-4 leading-relaxed text-gray-600">
           <p>
             I study computer science at the{' '}
             <HoverLink href="https://uwaterloo.ca">
@@ -72,7 +70,7 @@ export default function Home() {
           </p>
         </div>
 
-        <p className="mt-6 text-gray-500 dark:text-neutral-400">
+        <p className="mt-6 text-gray-500">
           <HoverLink href="https://twitter.com/austinjian_">twitter</HoverLink>
           <span className="px-2"></span>
           <HoverLink href="https://github.com/austinjiann">github</HoverLink>
@@ -81,8 +79,8 @@ export default function Home() {
         </p>
 
         <section className="mt-10">
-          <h2 className="text-lg font-medium text-black dark:text-white">
-            work <sup className="text-[0.6rem] text-gray-400 dark:text-neutral-500">{workItems.length}</sup>
+          <h2 className="text-lg font-medium text-black">
+            work <sup className="text-[0.6rem] text-gray-400">{workItems.length}</sup>
           </h2>
           <div className="mt-2 flex flex-col">
             {workItems.map((item, i) => (
@@ -92,8 +90,8 @@ export default function Home() {
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-medium text-black dark:text-white">
-            projects <sup className="text-[0.6rem] text-gray-400 dark:text-neutral-500">{projectItems.length}</sup>
+          <h2 className="text-lg font-medium text-black">
+            projects <sup className="text-[0.6rem] text-gray-400">{projectItems.length}</sup>
           </h2>
           <div className="mt-2 flex flex-col">
             {projectItems.map((item, i) => (

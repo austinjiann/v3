@@ -15,7 +15,7 @@ interface RowProps {
 
 export const Row = ({ logo, title, meta, description, right, href, index = 0 }: RowProps) => {
     const titleInner = (
-        <span className="flex items-center gap-2 text-black dark:text-white">
+        <span className="flex items-center gap-2 text-black">
             {logo && (
                 <img
                     src={logo}
@@ -28,7 +28,7 @@ export const Row = ({ logo, title, meta, description, right, href, index = 0 }: 
     );
 
     const className =
-        'group relative flex items-start gap-3 -mx-3 rounded-md px-3 py-3 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-neutral-900';
+        'group relative flex items-start gap-3 -mx-3 rounded-md px-3 py-3 transition-colors duration-300 hover:bg-gray-50';
     const animationProps = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -51,10 +51,10 @@ export const Row = ({ logo, title, meta, description, right, href, index = 0 }: 
                     ) : (
                         titleInner
                     )}
-                    {meta && <span className="min-w-0 truncate text-gray-500 dark:text-neutral-400">{meta}</span>}
-                    {right && <span className="ml-auto shrink-0 text-gray-400 tabular-nums dark:text-neutral-500">{right}</span>}
+                    {meta && <span className="min-w-0 truncate text-gray-500">{meta}</span>}
+                    {right && <span className="ml-auto shrink-0 text-gray-400 tabular-nums">{right}</span>}
                 </div>
-                {description && <p className="mt-1 text-sm text-gray-400 dark:text-neutral-500">{description}</p>}
+                {description && <p className="mt-1 text-sm text-gray-400">{description}</p>}
             </div>
         </motion.div>
     );
