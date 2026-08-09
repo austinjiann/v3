@@ -10,7 +10,7 @@ export const WebringBadge = ({ siteUrl }: Props) => {
       <a
         href={prev}
         aria-label="Previous site"
-        className="text-[0.95rem] text-gray-400 no-underline hover:opacity-70 transition-opacity duration-300"
+        className="text-[0.95rem] text-[var(--text-faint)] no-underline transition-opacity duration-300 hover:opacity-70"
       >
         ←
       </a>
@@ -18,18 +18,18 @@ export const WebringBadge = ({ siteUrl }: Props) => {
         href={hub}
         target="_blank"
         rel="noreferrer"
-        className="text-black hover:opacity-70 transition-opacity duration-300"
+        className="opacity-60 transition-opacity duration-300 hover:opacity-80"
       >
         <img
           src="https://cs.uwatering.com/icon.black.svg"
           alt="CS Webring"
-          className="h-auto w-5"
+          className="h-auto w-5 dark:invert"
         />
       </a>
       <a
         href={next}
         aria-label="Next site"
-        className="text-[0.95rem] text-gray-400 no-underline hover:opacity-70 transition-opacity duration-300"
+        className="text-[0.95rem] text-[var(--text-faint)] no-underline transition-opacity duration-300 hover:opacity-70"
       >
         →
       </a>

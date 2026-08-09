@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { Theme } from "@radix-ui/themes";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -49,11 +48,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{const theme=localStorage.getItem('theme');document.documentElement.classList.toggle('dark',theme!=="light")}catch{document.documentElement.classList.add('dark')}`,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} antialiased`}>
-        <Theme appearance="light" hasBackground={false}>
-          {children}
-        </Theme>
+        {children}
         <Analytics />
       </body>
     </html>
