@@ -1,18 +1,56 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  color-scheme: light;
+
   --background: #ffffff;
   --foreground: #171717;
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-faint: #9ca3af;
+  --surface-hover: #f7f7f8;
+  --border-subtle: #e5e7eb;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --link-underline: #000;
+  --link-underline: #171717;
+  --link-underline-muted: #a0a0a0;
 }
 
-html, body {
+html.dark {
+  color-scheme: dark;
+
+  --background: #111418;
+  --foreground: #eceef1;
+  --text-primary: #eceef1;
+  --text-secondary: #a0a5af;
+  --text-muted: #838994;
+  --text-faint: #676d77;
+  --surface-hover: #181c21;
+  --border-subtle: #292e34;
+  --link-underline: #d8dbe0;
+  --link-underline-muted: #555b65;
+}
+
+html,
+body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   overscroll-behavior: none;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+::selection {
+  background: #343a43;
+  color: var(--text-primary);
 }
