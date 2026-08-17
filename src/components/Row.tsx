@@ -20,7 +20,7 @@ export const Row = ({ title, meta, description, right, href, index = 0 }: RowPro
     );
 
     const className =
-        'group relative -mx-3 flex items-start gap-3 rounded-md px-3 py-3 opacity-100 transition-opacity duration-300 group-hover/list:opacity-35 hover:!opacity-100 focus-within:!opacity-100';
+        'portfolio-row group relative -mx-3 flex items-start gap-3 rounded-md px-3 py-3 opacity-100 transition-opacity duration-300 group-hover/list:opacity-35 hover:!opacity-100 focus-within:!opacity-100';
     const animationProps = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -48,8 +48,8 @@ export const Row = ({ title, meta, description, right, href, index = 0 }: RowPro
                         {right && <span className="ml-auto shrink-0 text-[var(--text-faint)] tabular-nums">{right}</span>}
                     </div>
                     {description && (
-                        <div className="mt-1 grid grid-rows-[1fr] opacity-100 transition-[grid-template-rows,margin-top,opacity] duration-300 ease-out sm:mt-0 sm:grid-rows-[0fr] sm:opacity-0 sm:group-hover:mt-1 sm:group-hover:grid-rows-[1fr] sm:group-hover:opacity-100 sm:group-focus-within:mt-1 sm:group-focus-within:grid-rows-[1fr] sm:group-focus-within:opacity-100">
-                            <p className="relative z-10 min-h-0 translate-y-0 overflow-hidden text-sm text-[var(--text-muted)] transition-transform duration-300 ease-out sm:translate-y-1 sm:group-hover:translate-y-0 sm:group-focus-within:translate-y-0">
+                        <div className="portfolio-row-detail mt-1 grid grid-rows-[1fr] opacity-100 transition-[grid-template-rows,margin-top,opacity] duration-300 ease-out">
+                            <p className="portfolio-row-description relative z-10 min-h-0 translate-y-0 overflow-hidden text-sm text-[var(--text-muted)] transition-transform duration-300 ease-out">
                                 {description}
                             </p>
                         </div>
