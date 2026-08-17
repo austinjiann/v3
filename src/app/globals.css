@@ -52,6 +52,30 @@ body {
   }
 }
 
+@media (min-width: 40rem) {
+  .portfolio-row .portfolio-row-detail {
+    margin-top: 0;
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+
+  .portfolio-row .portfolio-row-description {
+    transform: translateY(0.25rem);
+  }
+
+  .portfolio-row:hover .portfolio-row-detail,
+  .portfolio-row:has(a:focus-visible) .portfolio-row-detail {
+    margin-top: 0.25rem;
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .portfolio-row:hover .portfolio-row-description,
+  .portfolio-row:has(a:focus-visible) .portfolio-row-description {
+    transform: translateY(0);
+  }
+}
+
 ::selection,
 *::selection,
 html:not(.dark) ::selection,
