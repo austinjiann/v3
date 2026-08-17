@@ -9,19 +9,21 @@ export const HoverLink = ({ href, children }: { href: string; children: React.Re
       style={{
         color: 'inherit',
         fontWeight: 'inherit',
-        textDecoration: 'none',
-        backgroundImage: 'linear-gradient(to right, var(--link-underline), var(--link-underline)), linear-gradient(to right, var(--link-underline-muted), var(--link-underline-muted))',
-        backgroundSize: '0% 1px, 100% 1px',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'left bottom, left bottom',
-        transition: 'background-size 1s ease-in-out',
-        paddingBottom: '2px',
+        textDecorationLine: 'underline',
+        textDecorationColor: 'var(--link-underline-muted)',
+        textDecorationThickness: '1px',
+        textUnderlineOffset: '4px',
+        transition: 'color 180ms ease, text-decoration-color 180ms ease, text-shadow 180ms ease',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundSize = '100% 1px, 100% 1px';
+        e.currentTarget.style.color = 'var(--link-underline)';
+        e.currentTarget.style.textDecorationColor = 'var(--link-underline)';
+        e.currentTarget.style.textShadow = '0 0 12px var(--link-glow)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundSize = '0% 1px, 100% 1px';
+        e.currentTarget.style.color = 'inherit';
+        e.currentTarget.style.textDecorationColor = 'var(--link-underline-muted)';
+        e.currentTarget.style.textShadow = 'none';
       }}
     >
       {children}

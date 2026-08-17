@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 type Props = { siteUrl: string; };
 
 export const WebringBadge = ({ siteUrl }: Props) => {

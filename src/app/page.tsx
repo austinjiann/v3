@@ -6,26 +6,17 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 
 const workItems = [
   {
-    logo: '/experience/phoebe_logo.jpeg',
     title: 'phoebe',
     description:
-      "phoebe builds ai agents for home healthcare agencies. I'm helping develop the agent and eval harness and also build features",
+      "worked on eval infra, agent harness, and built some features",
     right: '2026',
     href: 'https://www.phoebe.work',
   },
   {
-    logo: '/experience/untolabs.png',
     title: 'unto labs',
     description: (
       <>
-        unto is building{' '}
-        <span className="relative z-10">
-          <HoverLink href="https://www.thru.org">
-            <img src="/experience/thru.png" alt="" className="inline h-[1em] w-auto rounded-sm align-[-0.15em]" /> thru
-          </HoverLink>
-        </span>
-        , an L1 blockchain. I did some product engineering with a consumer app and briefly touched
-        some blockchain and agent work
+        product engineering & consumer app with the <HoverLink href="https://www.thru.org">thru</HoverLink> blockchain
       </>
     ),
     right: '2026',
@@ -35,18 +26,78 @@ const workItems = [
 
 const projectItems = [
   {
-    logo: '/projects/flowboard.png',
+    title: '24/7 customer simulator',
+    description: "20 ai agents use phoebe's product 24/7 to catch bugs and find edge cases",
+    right: '2026',
+    href: 'https://x.com/austinjian_/status/2087977300406976682',
+  },
+  {
     title: 'flowboard',
-    description: 'a node-based creative canvas tool that turns rough sketches into infinitely long context-aware videos. 250k+ views, 150+ stars',
+    description: 'turn drawings into infinitely long videos. 250k+ views, 150+ stars',
     right: '2025',
     href: 'https://github.com/austinjiann/FlowBoard',
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://austinjian.ca/#person",
+      name: "Austin Jian",
+      url: "https://austinjian.ca",
+      email: "mailto:austinjian07@gmail.com",
+      sameAs: [
+        "https://twitter.com/austinjian_",
+        "https://github.com/austinjiann",
+        "https://linkedin.com/in/austinjian",
+      ],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Waterloo",
+        url: "https://uwaterloo.ca",
+      },
+      knowsAbout: [
+        "AI agents",
+        "eval infrastructure",
+        "product engineering",
+        "distributed systems",
+        "creative tools",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://austinjian.ca/#website",
+      url: "https://austinjian.ca",
+      name: "Austin Jian",
+      author: {
+        "@id": "https://austinjian.ca/#person",
+      },
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://austinjian.ca/#projects",
+      name: "Projects",
+      itemListElement: projectItems.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        description: item.description,
+        url: item.href,
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div className="flex min-h-screen justify-center bg-[var(--background)] font-sans">
-      <main className="flex min-h-screen w-full max-w-xl flex-col px-6 py-12 sm:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="flex min-h-screen w-full max-w-xl flex-col justify-center px-6 py-12 sm:px-8">
         <header className="flex items-center justify-between">
           <Header />
           <ThemeToggle />
@@ -54,21 +105,10 @@ export default function Home() {
 
         <div className="mt-6 space-y-4 leading-relaxed text-[var(--text-secondary)]">
           <p>
-            I study computer science at the{' '}
-            <HoverLink href="https://uwaterloo.ca">
-              <img src="/uw.png" alt="" className="inline h-[1em] w-auto rounded-full align-[-0.15em]" /> university of waterloo
-            </HoverLink>
-            . I&apos;m currently based in nyc, where I work at{' '}
-            <HoverLink href="https://www.phoebe.work">
-              <img src="/experience/phoebe_logo.jpeg" alt="" className="inline h-[1em] w-auto rounded-sm align-[-0.15em]" /> phoebe
-            </HoverLink>
-            , but I&apos;m from toronto.
+            I study computer science at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
           </p>
           <p>
-            interested in all areas of tech, especially infra, distributed systems, product engineering, and consumer apps
-          </p>
-          <p>
-            reach out to my socials or austinjian07@gmail.com for all inquiries
+            austinjian07@gmail.com for all inquiries
           </p>
         </div>
 
@@ -82,9 +122,9 @@ export default function Home() {
 
         <section className="mt-10">
           <h2 className="text-lg font-medium text-[var(--text-primary)]">
-            work <sup className="text-[0.6rem] text-[var(--text-faint)]">{workItems.length}</sup>
+            work
           </h2>
-          <div className="mt-2 flex flex-col">
+          <div className="group/list mt-2 flex flex-col">
             {workItems.map((item, i) => (
               <Row key={item.title} {...item} index={i} />
             ))}
@@ -93,9 +133,9 @@ export default function Home() {
 
         <section className="mt-8">
           <h2 className="text-lg font-medium text-[var(--text-primary)]">
-            projects <sup className="text-[0.6rem] text-[var(--text-faint)]">{projectItems.length}</sup>
+            projects
           </h2>
-          <div className="mt-2 flex flex-col">
+          <div className="group/list mt-2 flex flex-col">
             {projectItems.map((item, i) => (
               <Row key={item.title} {...item} index={workItems.length + i} />
             ))}
