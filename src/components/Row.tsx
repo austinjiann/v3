@@ -1,6 +1,5 @@
 'use client';
 
-import * as motion from 'motion/react-client';
 import React from 'react';
 
 interface RowProps {
@@ -12,7 +11,7 @@ interface RowProps {
     index?: number;
 }
 
-export const Row = ({ title, meta, description, right, href, index = 0 }: RowProps) => {
+export const Row = ({ title, meta, description, right, href }: RowProps) => {
     const titleInner = (
         <span className="text-[var(--text-primary)]">
             {title}
@@ -21,14 +20,9 @@ export const Row = ({ title, meta, description, right, href, index = 0 }: RowPro
 
     const className =
         'portfolio-row group relative -mx-3 flex items-start gap-3 rounded-md px-3 py-3 opacity-100 transition-opacity duration-300 group-hover/list:opacity-35 hover:!opacity-100 focus-within:!opacity-100';
-    const animationProps = {
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.5, delay: 0.2 + index * 0.1 },
-    } as const;
 
     return (
-        <motion.div {...animationProps}>
+        <div>
             <div className={className}>
                 <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-3">
@@ -56,6 +50,6 @@ export const Row = ({ title, meta, description, right, href, index = 0 }: RowPro
                     )}
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
