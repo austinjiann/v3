@@ -18,6 +18,7 @@
   --font-mono: var(--font-geist-mono);
   --link-underline: #171717;
   --link-underline-muted: #a0a0a0;
+  --link-glow: rgba(23, 23, 23, 0.24);
 }
 
 html.dark {
@@ -33,6 +34,7 @@ html.dark {
   --border-subtle: #292e34;
   --link-underline: #d8dbe0;
   --link-underline-muted: #555b65;
+  --link-glow: rgba(216, 219, 224, 0.28);
 }
 
 html,
@@ -50,7 +52,16 @@ body {
   }
 }
 
-::selection {
+::selection,
+*::selection,
+html:not(.dark) ::selection,
+html:not(.dark) *::selection {
+  background: #e8e8e8;
+  color: #171717;
+}
+
+html.dark ::selection,
+html.dark *::selection {
   background: #343a43;
-  color: var(--text-primary);
+  color: #ffffff;
 }

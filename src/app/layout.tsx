@@ -10,14 +10,30 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://austinjian.ca"),
-  title: "Austin Jian",
-  description: "Austin Jian - CS student at University of Waterloo building beautiful software.",
-  keywords: ["Austin Jian", "University of Waterloo", "software engineer", "FlowBoard", "PlayCreate", "Phoebe", "Unto Labs", "CS student", "developer"],
+  title: {
+    default: "Austin Jian",
+    template: "%s | Austin Jian",
+  },
+  description: "Austin Jian studies computer science at the University of Waterloo and builds AI agents, eval systems, and creative tools.",
   authors: [{ name: "Austin Jian" }],
   creator: "Austin Jian",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Austin Jian",
-    description: "CS student at University of Waterloo building beautiful software.",
+    description: "CS student at the University of Waterloo building AI agents, eval systems, and creative tools.",
     url: "https://austinjian.ca",
     siteName: "Austin Jian",
     type: "website",
@@ -33,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Austin Jian",
-    description: "CS student at University of Waterloo building beautiful software.",
+    description: "CS student at the University of Waterloo building AI agents, eval systems, and creative tools.",
     creator: "@austinjian_",
     images: ["/preview.png"],
   },
