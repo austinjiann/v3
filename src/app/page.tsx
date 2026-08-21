@@ -26,8 +26,8 @@ const workItems = [
 
 const projectItems = [
   {
-    title: '24/7 customer simulator',
-    description: "20 ai agents use phoebe's product 24/7 to catch bugs and find edge cases",
+    title: '24/7 multi-agent simulation',
+    description: "20 ai agents use phoebe's product to catch regressions and find edge cases",
     right: '2026',
     href: 'https://x.com/austinjian_/status/2087977300406976682',
   },
