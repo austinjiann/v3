@@ -1,0 +1,23 @@
+src/app/globals.css
+  s_4323e400cc6748::t_b202280bc4e076 63
+src/components/WebringBadge.tsx
+  s_4323e400cc6748::t_b202280bc4e076 26
+src/app/layout.tsx
+  s_4323e400cc6748::t_b202280bc4e076 67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4d15675380a95fd93a609a6a909a5e0dddd8733e",
+  "prompts": {},
+  "sessions": {
+    "s_4323e400cc6748": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c7663390-0366-4e55-ac20-ddf4df13e2cc",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Austin Jian <austin.jian07@gmail.com>"
+    }
+  }
+}
