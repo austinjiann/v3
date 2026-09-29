@@ -23,7 +23,7 @@ export const WebringBadge = ({ siteUrl }: Props) => {
         <img
           src="https://cs.uwatering.com/icon.black.svg"
           alt="CS Webring"
-          className="h-auto w-5 dark:invert"
+          className="h-auto w-5"
         />
       </a>
       <a

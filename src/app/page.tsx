@@ -2,7 +2,6 @@ import { HoverLink } from '@/components/HoverLink';
 import { Row } from '@/components/Row';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ThemeToggle } from '@/components/ThemeToggle';
 
 const workItems = [
   {
@@ -100,7 +99,6 @@ export default function Home() {
       <main className="flex min-h-screen w-full max-w-xl flex-col justify-center px-6 py-12 sm:px-8">
         <header className="flex items-center justify-between">
           <Header />
-          <ThemeToggle />
         </header>
 
         <div className="mt-6 space-y-4 leading-relaxed text-[var(--text-secondary)]">
