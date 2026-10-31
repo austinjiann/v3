@@ -25,6 +25,11 @@ const workItems = [
 
 const projectItems = [
   {
+    title: 'orbis engine',
+    description: "hack the north '26 finalist. turns videos into gaussian splats you can rewatch in 4d",
+    right: '2026',
+  },
+  {
     title: '24/7 multi-agent simulation',
     description: "20 ai agents use phoebe's product to catch regressions and find edge cases",
     right: '2026',
@@ -103,7 +108,7 @@ export default function Home() {
 
         <div className="mt-6 space-y-4 leading-relaxed text-[var(--text-secondary)]">
           <p>
-            I study computer science at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
+            I&apos;m a software engineer and computer science student at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
           </p>
           <p>
             austinjian07@gmail.com for all inquiries
