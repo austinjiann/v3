@@ -26,7 +26,7 @@ const workItems = [
 const projectItems = [
   {
     title: 'orbis engine',
-    description: "hack the north '26 finalist. turns videos into gaussian splats you can rewatch in 4d",
+    description: "turn any video into a 4d scene you can walk around in, in browser or vr. hack the north '26 finalist, 2nd in openai track",
     right: '2026',
   },
   {
