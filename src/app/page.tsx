@@ -26,7 +26,7 @@ const workItems = [
 const projectItems = [
   {
     title: 'orbis engine',
-    description: "turn any video into a 4d scene you can walk around in. hack the north '26 finalist",
+    description: "turn videos into 4d scenes you can walk around in. hack the north '26 finalist",
     right: '2026',
     href: 'https://devpost.com/software/temp-jcyltx',
   },
