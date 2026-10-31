@@ -26,8 +26,9 @@ const workItems = [
 const projectItems = [
   {
     title: 'orbis engine',
-    description: "turn any video into a 4d scene you can walk around in, in browser or vr. hack the north '26 finalist",
+    description: "turn any video into a 4d scene you can walk around in. hack the north '26 finalist",
     right: '2026',
+    href: 'https://devpost.com/software/temp-jcyltx',
   },
   {
     title: '24/7 multi-agent simulation',
@@ -108,7 +109,7 @@ export default function Home() {
 
         <div className="mt-6 space-y-4 leading-relaxed text-[var(--text-secondary)]">
           <p>
-            I&apos;m a software engineer and computer science student at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
+            I&apos;m a software engineer and cs student at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
           </p>
           <p>
             austinjian07@gmail.com for all inquiries
