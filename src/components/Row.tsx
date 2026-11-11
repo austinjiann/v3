@@ -19,7 +19,7 @@ export const Row = ({ title, meta, description, right, href }: RowProps) => {
     );
 
     const className =
-        'portfolio-row group relative -mx-3 flex items-start gap-3 rounded-md px-3 py-3 opacity-100 transition-opacity duration-300 group-hover/list:opacity-35 hover:!opacity-100 focus-within:!opacity-100';
+        'portfolio-row group relative -mx-3 flex items-start gap-3 rounded-md px-3 py-2 opacity-100 transition-opacity duration-300 group-hover/list:opacity-35 hover:!opacity-100 focus-within:!opacity-100';
 
     return (
         <div>
@@ -39,7 +39,7 @@ export const Row = ({ title, meta, description, right, href }: RowProps) => {
                             titleInner
                         )}
                         {meta && <span className="min-w-0 truncate text-[var(--text-muted)]">{meta}</span>}
-                        {right && <span className="ml-auto shrink-0 text-[var(--text-faint)] tabular-nums">{right}</span>}
+                        {right && <span className="ml-auto shrink-0 text-[var(--text-date)] tabular-nums">{right}</span>}
                     </div>
                     {description && (
                         <div className="portfolio-row-detail mt-1 grid grid-rows-[1fr] opacity-100 transition-[grid-template-rows,margin-top,opacity] duration-300 ease-out">
