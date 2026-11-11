@@ -2,8 +2,14 @@ import { HoverLink } from '@/components/HoverLink';
 import { Row } from '@/components/Row';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ReadMore } from '@/components/ReadMore';
 
 const workItems = [
+  {
+    title: 'vercel',
+    right: '2027',
+    href: 'https://vercel.com',
+  },
   {
     title: 'phoebe',
     description:
@@ -97,7 +103,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen justify-center bg-[var(--background)] font-sans">
+    <div className="flex min-h-screen justify-center bg-[var(--background)] font-sans font-medium">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -105,41 +111,53 @@ export default function Home() {
       <main className="flex min-h-screen w-full max-w-xl flex-col justify-center px-6 py-12 sm:px-8">
         <header className="flex items-center justify-between">
           <Header />
+          <nav className="flex items-center gap-4 text-[var(--text-primary)]">
+            <HoverLink href="https://x.com/austinjian_">x</HoverLink>
+            <HoverLink href="https://github.com/austinjiann">github</HoverLink>
+            <HoverLink href="https://linkedin.com/in/austinjian">linkedin</HoverLink>
+          </nav>
         </header>
 
-        <div className="mt-6 space-y-4 leading-relaxed text-[var(--text-secondary)]">
+        <div className="mt-5 space-y-3 leading-relaxed text-[var(--text-secondary)]">
           <p>
-            I&apos;m a software engineer and cs student at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
+            i&apos;m a software engineer and cs student at the <HoverLink href="https://uwaterloo.ca">university of waterloo</HoverLink>.
           </p>
+          <ReadMore
+            intro={
+              <>
+                currently in school and based in toronto. in january, i&apos;ll be moving to san francisco to intern at{' '}
+                <HoverLink href="https://vercel.com">vercel</HoverLink>.
+              </>
+            }
+            more={
+              <>
+                most recently, i spent a summer in nyc working at{' '}
+                <HoverLink href="https://www.phoebe.work">phoebe</HoverLink> and previously at{' '}
+                <HoverLink href="https://www.untolabs.com">unto labs</HoverLink>.
+              </>
+            }
+          />
           <p>
-            austinjian07@gmail.com for all inquiries
+            i&apos;m open to full-time and internship engineering roles. feel free to reach out at austinjian07@gmail.com or on any of my socials
           </p>
         </div>
 
-        <p className="mt-6 text-[var(--text-muted)]">
-          <HoverLink href="https://twitter.com/austinjian_">twitter</HoverLink>
-          <span className="px-2"></span>
-          <HoverLink href="https://github.com/austinjiann">github</HoverLink>
-          <span className="px-2"></span>
-          <HoverLink href="https://linkedin.com/in/austinjian">linkedin</HoverLink>
-        </p>
-
-        <section className="mt-10">
-          <h2 className="text-lg font-medium text-[var(--text-primary)]">
+        <section className="mt-8">
+          <h2 className="text-lg font-semibold tracking-tight text-[var(--text-primary)]">
             work
           </h2>
-          <div className="group/list mt-2 flex flex-col">
+          <div className="group/list mt-1 flex flex-col">
             {workItems.map((item, i) => (
               <Row key={item.title} {...item} index={i} />
             ))}
           </div>
         </section>
 
-        <section className="mt-8">
-          <h2 className="text-lg font-medium text-[var(--text-primary)]">
+        <section className="mt-6">
+          <h2 className="text-lg font-semibold tracking-tight text-[var(--text-primary)]">
             projects
           </h2>
-          <div className="group/list mt-2 flex flex-col">
+          <div className="group/list mt-1 flex flex-col">
             {projectItems.map((item, i) => (
               <Row key={item.title} {...item} index={workItems.length + i} />
             ))}
