@@ -7,6 +7,7 @@ import { ReadMore } from '@/components/ReadMore';
 const workItems = [
   {
     title: 'vercel',
+    description: 'starting in january',
     right: '2027',
     href: 'https://vercel.com',
   },
